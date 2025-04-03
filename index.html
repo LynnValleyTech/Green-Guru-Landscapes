@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Guru Landscapes | North Vancouver Landscaping Experts</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Color Variables */
+        :root {
+            --primary-green: #2a5c45;
+            --secondary-green: #4a8c6d;
+            --accent-gold: #d4af37;
+            --light-bg: #f5f5f5;
+            --dark-text: #333;
+            --light-text: #fff;
+        }
+        
+        /* General Styles */
+        body {
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--accent-gold);
+            color: var(--dark-text);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-green);
+            color: var(--light-text);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--light-text);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--light-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary-green);
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            color: var(--light-text);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card .client {
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--light-text);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Green <span>Guru</span> Landscapes</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Transforming North Vancouver's Outdoor Spaces</h1>
+            <p>Eco-friendly landscaping solutions tailored to your unique property and lifestyle</p>
+            <a href="#contact" class="btn">Get Your Free Estimate</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Comprehensive landscaping services for residential and commercial properties in North Vancouver</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-tree"></i>
+                    <h3>Residential Landscaping</h3>
+                    <p>Beautiful, functional outdoor spaces designed for your home and lifestyle.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Landscaping</h3>
+                    <p>Professional landscaping solutions to enhance your business property.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Garden Design & Installation</h3>
+                    <p>Custom garden designs that thrive in North Vancouver's climate.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainable Landscaping</h3>
+                    <p>Eco-friendly solutions that reduce water use and maintenance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Seasonal Maintenance</h3>
+                    <p>Year-round care to keep your landscape looking its best.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Irrigation Systems</h3>
+                    <p>Smart watering solutions for healthy plants and water conservation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-content">
+            <h2>About Green Guru Landscapes</h2>
+            <p>Founded in 2010, Green Guru Landscapes has been beautifying North Vancouver properties with sustainable, innovative landscaping solutions.</p>
+            <p>Our team of certified horticulturists and landscape designers brings together creativity, technical expertise, and a deep respect for the natural environment.</p>
+            <p>We're proud to be a leader in eco-friendly landscaping practices, using native plants, organic methods, and water-wise techniques to create outdoor spaces that are as sustainable as they are beautiful.</p>
+            <a href="#contact" class="btn">Learn More About Us</a>
+        </div>
+        <div class="container about-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Green Guru Landscapes team">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from satisfied customers across North Vancouver</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Green Guru transformed our backyard into an oasis. Their attention to detail and plant knowledge is exceptional."</p>
+                    <div class="client">- Sarah & Michael, Edgemont Village</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Our commercial property has never looked better. Reliable, professional service every time."</p>
+                    <div class="client">- Downtown North Vancouver Business Association</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"The sustainable garden they designed for us is low-maintenance and absolutely stunning. Worth every penny!"</p>
+                    <div class="client">- James, Lynn Valley</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Our Work</h2>
+            <p>Browse our portfolio of completed projects in North Vancouver</p>
+            <!-- Gallery would go here -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to transform your outdoor space? Get in touch for a free consultation.</p>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="residential">Residential Landscaping</option>
+                            <option value="commercial">Commercial Landscaping</option>
+                            <option value="garden">Garden Design</option>
+                            <option value="sustainable">Sustainable Landscaping</option>
+                            <option value="maintenance">Seasonal Maintenance</option>
+                            <option value="irrigation">Irrigation Systems</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Green Guru Landscapes</h3>
+                    <p>Sustainable landscaping experts serving North Vancouver since 2010.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> North Vancouver, BC</li>
+                        <li><i class="fas fa-phone"></i> (604) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@greengurulandscapes.ca</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Service Areas</h3>
+                    <ul>
+                        <li>North Vancouver</li>
+                        <li>West Vancouver</li>
+                        <li>Deep Cove</li>
+                        <li>Lynn Valley</li>
+                        <li>Edgemont Village</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Green Guru Landscapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
